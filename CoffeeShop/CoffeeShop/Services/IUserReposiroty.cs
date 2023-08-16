@@ -5,8 +5,9 @@ namespace CoffeeShop.API.Services
     public interface IUserReposiroty
     {
         public List<Users> GetAllUser();
-        public List<Users> GetUserByID(int id);
-        public void Update();
-        public void Delete();
+        public Users GetUserByID(string id);
+        public Users createNewUser(Users us);
+        public void Update(Users us);
+        public void Delete(string id);
     }
 }
