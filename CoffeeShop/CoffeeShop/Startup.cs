@@ -1,3 +1,4 @@
+using CoffeeShop.API.Services;
 using CoffeeShop.Data.EF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +29,12 @@ namespace CoffeeShop.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CoffeeShopDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("coffeeShopSolutionDb")));
-            services.AddControllers();           
+            services.AddControllers();
+            services.AddScoped<IUserReposiroty, UserReposiroty>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Swagger coffeeShopSolution", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +50,11 @@ namespace CoffeeShop.API
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json/", "Swagger Demo");
+            });
 
             app.UseEndpoints(endpoints =>
             {

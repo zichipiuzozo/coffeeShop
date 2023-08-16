@@ -9,6 +9,8 @@ namespace CoffeeShop.Data.EF
 {
     public class CoffeeShopDBContext : DbContext
     {
+        public readonly IEnumerable<object> users;
+
         public CoffeeShopDBContext(DbContextOptions options) : base(options)
         {
         }
@@ -45,6 +47,8 @@ namespace CoffeeShop.Data.EF
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Users> Users { get; set; }
+       
 
     }
 }
