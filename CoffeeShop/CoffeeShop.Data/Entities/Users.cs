@@ -15,5 +15,8 @@ namespace CoffeeShop.Data.Entities
         public DateTime DOB { get; set; }
         public string FullName { get; set; }
         public string LastLoginDate { get; set; }
+        public List<Cart> Carts { get; set; }
+        public List<Order> Orders { get; set; }
+        public List<Transaction> Transactions { get; set; } 
     }
 }
