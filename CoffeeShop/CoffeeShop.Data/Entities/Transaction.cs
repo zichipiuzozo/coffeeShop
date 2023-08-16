@@ -1,7 +1,9 @@
-﻿using CoffeeShop.Data.Enums;
+﻿using CoffeeShop.Data.Entities;
+using CoffeeShop.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+
 
 namespace CoffeeShop.Data.Entities
 {
@@ -18,5 +20,8 @@ namespace CoffeeShop.Data.Entities
         public string Provider { set; get; }
 
         public Guid UserId { get; set; }
+
+        public Users Users { get; set; }
+
     }
 }
