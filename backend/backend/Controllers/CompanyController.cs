@@ -46,6 +46,8 @@ namespace backend.Controllers
             var convertedCompanies = _mapper.Map<IEnumerable<CompanyGetDto>>(companies);
             return Ok(convertedCompanies);
         }
+        
+        //Read (Get company by ID)
 
         //Update
 
