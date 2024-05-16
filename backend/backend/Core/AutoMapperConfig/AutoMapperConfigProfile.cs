@@ -20,7 +20,7 @@ namespace backend.Core.AutoMapperConfig
                 .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name));
 
             //Candidate
-            CreateMap<candidateCreateDto, Candidate>();
+            CreateMap<CandidateCreateDto, Candidate>();
             CreateMap<Candidate, CandidateGetDto>()
                 .ForMember(dest => dest.JobTitle, opt => opt.MapFrom(src => src.Job.Title));
         }

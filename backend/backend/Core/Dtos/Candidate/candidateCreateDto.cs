@@ -1,6 +1,6 @@
 ﻿namespace backend.Core.Dtos.Candidate
 {
-    public class candidateCreateDto
+    public class CandidateCreateDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
